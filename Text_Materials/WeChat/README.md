@@ -1,4 +1,4 @@
-# 微信语料收集说明
+# 微信语料收集说明（讲座预告类）
 ## 1.url_List.xlsx
 表格中收集信息如图
 ![Image text](https://raw.githubusercontent.com/JJYDXFS/little-innovation/master/Text_Materials/WeChat/img/xlsx.jpg)
