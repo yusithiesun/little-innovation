@@ -56,7 +56,7 @@ if __name__=="__main__":
     sheet=wb['Sheet']
 
     os.mkdir(path + './SCUT_Text')
-    path='C:/Users/Joyce/Desktop/SCUT_Text'
+    path='***/SCUT_Text'
     os.chdir(path)
     
     for i in range(1,sheet.max_row+1):
