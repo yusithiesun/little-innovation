@@ -1,5 +1,5 @@
 '''
-项目介绍：爬取华南理工大学官网讲座预告文本
+项目介绍：按SCUT.xlsx中的链接爬取华南理工大学官网讲座预告文本
 说明：由于该批网页由jQuery加载，直接爬取会加载不全
 （具体表现为包裹正文的<article>标签用requests库get后会缺少结束标签</article>
 从而导致抓取的文本会有噪声项干扰）
@@ -7,7 +7,7 @@
 '''
 import lxml
 import os
-#import time    #经试验暂时不需要等待加载 
+#import time    #经试验暂时不需要等待加载，其实偶尔会有来不及加载的情况加载，1136次爬取中出现了2次
 from openpyxl import load_workbook
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -17,6 +17,7 @@ def writeText(title,text):
     '''
     将文本写入文件夹中
     title为文件名
+    text为文件内容
     '''  
     #print(text)
     fp=open(title+".txt","w",encoding='utf-8')
@@ -32,7 +33,7 @@ def getText(url):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     #实例化一个浏览器对象
-    browser = webdriver.Chrome(options=chrome_options,executable_path="G:/chromedriver_win32/chromedriver")
+    browser = webdriver.Chrome(options=chrome_options,executable_path="***/chromedriver")
     #获取加载后的界面
     browser.get(url)
     #解析界面
@@ -45,20 +46,20 @@ def getText(url):
     Text=Text+bs.find('article',{'class':'read'}).get_text()
     return [Title,Text]
 
-path = 'C:/Users/Joyce/Desktop'
+path = '***'
 #不可出现在文件名中的保留字符，将统一替换成'-'
 char_set=['/','\\',':','*','?','|','"','>','<']
 
 if __name__=="__main__":
     #设置读取的xlsx路径
-    wb=load_workbook('C:/Users/Joyce/Desktop/SCUT.xlsx')
+    wb=load_workbook('***/SCUT.xlsx')
     sheet=wb['Sheet']
 
-    #os.mkdir(path + './SCUT_Text')
+    os.mkdir(path + './SCUT_Text')
     path='C:/Users/Joyce/Desktop/SCUT_Text'
     os.chdir(path)
-    #间断进行
-    for i in range(755,sheet.max_row+1):
+    
+    for i in range(1,sheet.max_row+1):
         if sheet.cell(i,1).value == None:break
         Title,Text=getText(sheet.cell(i,1).value)
         #替换保留字符
@@ -67,4 +68,4 @@ if __name__=="__main__":
         #print(Title)
         #输出txt
         writeText(str(i)+"_"+Title,Text)
-    
+     
