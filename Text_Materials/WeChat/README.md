@@ -6,5 +6,5 @@
 获取url_List.xlsx中收集的文章文本，并以txt格式保存
 如图每个txt中均标注了原文链接/公众号信息/正文
 ![Image text](https://raw.githubusercontent.com/JJYDXFS/little-innovation/master/Text_Materials/WeChat/img/txt.jpg)
-## 3.源码.py
+## 3.WeChat_getContent.py
 源代码
