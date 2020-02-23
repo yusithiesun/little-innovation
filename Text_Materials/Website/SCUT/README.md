@@ -4,5 +4,5 @@
 ![Image text](https://github.com/JJYDXFS/little-innovation/blob/master/Text_Materials/Website/SCUT/img/SCUT.jpg?raw=true)
 ## SCUT_Text.zip：SCUT.xlsx中所有链接对应的文本
 ![Image text](https://github.com/JJYDXFS/little-innovation/blob/master/Text_Materials/Website/SCUT/img/SCUT_content.jpg?raw=true)
-## SCUT.PY：获取通知链接的代码
-## SCUT_getContent.PY：获取链接中文本的代码
+## SCUT.PY：获取内链的代码
+## SCUT_getContent.PY：获取内链中文本的代码
