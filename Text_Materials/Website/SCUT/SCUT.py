@@ -1,6 +1,9 @@
 '''
-项目介绍：
-
+项目介绍：爬取华南理工大学所有讲座预告的链接，存在SCUT.xlsx中
+说明：
+1.起始网页：https://www.scut.edu.cn/new/9010/list.htm
+2.使用正则表达式匹配内链
+（杀鸡不用scrapy）
 '''
 import requests
 import lxml
@@ -30,8 +33,6 @@ if __name__=="__main__":
     sheet=wb.active
     for link,index in zip(url_list,range(1,len(url_list)+1)):
         sheet.cell(index,1).value=link
-    wb.save("C:/Users/Joyce/Desktop/SCUT.xlsx")
+    wb.save("***/SCUT.xlsx")
 
     
-
-
