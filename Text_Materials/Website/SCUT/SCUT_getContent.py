@@ -34,9 +34,9 @@ def getText(url):
     chrome_options.add_argument('--headless')
     #实例化一个浏览器对象
     browser = webdriver.Chrome(options=chrome_options,executable_path="***/chromedriver")
-    #获取加载后的界面
+    #获取加载后的页面
     browser.get(url)
-    #解析界面
+    #解析页面
     bs=BeautifulSoup(browser.page_source,'lxml')
     #放入url
     Text=Text+"文章链接："+url+"\n"
