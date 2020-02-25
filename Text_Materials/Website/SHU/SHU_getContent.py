@@ -16,7 +16,6 @@ def writeText(title,text):
     将文本写入文件夹中
     title为文件名
     '''  
-    #print(text)
     fp=open(title+".txt","w",encoding='utf-8')
     fp.write(text)
     fp.close()
@@ -74,9 +73,9 @@ def getURL(seedURL):
 postPath="http://sjc.shu.edu.cn"  #前缀网址
 char_set=['/','\\',':','*','?','|','"','>','<'] #保留字符
 if __name__=="__main__":
-    path = 'C:/Users/Joyce/Desktop'
+    path = '***'
     os.mkdir(path + './SHU_Text')
-    path='C:/Users/Joyce/Desktop/SHU_Text'
+    path='***/SHU_Text'
     os.chdir(path)
 
     seedURL="http://sjc.shu.edu.cn/tg/xsjz{index}.htm"
@@ -91,4 +90,4 @@ if __name__=="__main__":
         for link,index in zip(url_list,range(1,len(url_list)+1)):
             sheet.cell(index,1).value=link[0]
             sheet.cell(index,2).value=link[1] 
-        wb.save("C:/Users/Joyce/Desktop/SHU.xlsx")
+        wb.save("***/SHU.xlsx")
