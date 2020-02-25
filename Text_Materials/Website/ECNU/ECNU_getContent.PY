@@ -3,7 +3,7 @@
 说明：
 1.起始网页：http://www.comm.ecnu.edu.cn/htmlaction.do?method=toGetSubNewsList&menuType=7&pageNo=0
 2.访问内容时需要cookie
-3.该网站源有点问题，大部分文章无法访问
+3.该网站源有点问题，大部分文章失效
 '''
 import requests
 import lxml
