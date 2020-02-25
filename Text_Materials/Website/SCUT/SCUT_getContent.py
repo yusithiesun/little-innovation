@@ -19,7 +19,6 @@ def writeText(title,text):
     title为文件名
     text为文件内容
     '''  
-    #print(text)
     fp=open(title+".txt","w",encoding='utf-8')
     fp.write(text)
     fp.close()
@@ -56,7 +55,7 @@ if __name__=="__main__":
     sheet=wb['Sheet']
 
     os.mkdir(path + './SCUT_Text')
-    path='C:/Users/Joyce/Desktop/SCUT_Text'
+    path='***/SCUT_Text'
     os.chdir(path)
     
     for i in range(1,sheet.max_row+1):
@@ -65,7 +64,6 @@ if __name__=="__main__":
         #替换保留字符
         for char in char_set:
             Title=Title.replace(char,'-')
-        #print(Title)
         #输出txt
         writeText(str(i)+"_"+Title,Text)
      
